@@ -1,0 +1,22 @@
+diff --git a/cmake/libigl.cmake b/cmake/libigl.cmake
+index 991cf0d9..46abc013 100644
+--- a/cmake/libigl.cmake
++++ b/cmake/libigl.cmake
+@@ -569,6 +569,14 @@ if (LIBIGL_WITH_OPENGL OR LIBIGL_WITH_OPENGL_GLFW OR LIBIGL_WITH_OPENGL_GLFW_IMG
+     install_dir_files(opengl)
+ endif()
+ 
++if (LIBIGL_WITH_OPENGL_GLFW OR LIBIGL_WITH_OPENGL_GLFW_IMGUI)
++    install_dir_files("opengl/glfw")
++endif()
++
++if (LIBIGL_WITH_OPENGL_GLFW_IMGUI)
++    install_dir_files("opengl/glfw/imgui")
++endif()
++
+ if (LIBIGL_WITH_PNG)
+     install_dir_files(png)
+ endif()
+-- 
+2.27.0.windows.1
+
